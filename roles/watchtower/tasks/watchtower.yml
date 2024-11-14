@@ -1,5 +1,4 @@
 ---
-
 - name: "Prepare task variables"
   ansible.builtin.set_fact:
     watchtower_service_id: "watchtower"
@@ -12,6 +11,22 @@
   community.general.docker_network:
     name: "{{ watchtower_docker_settings.network }}"
     state: "present"
+
+- name: "Make sure config directory exists"
+  ansible.builtin.file:
+    path: "{{ watchtower_install_dir }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    state: "directory"
+    mode: "0774"
+
+- name: "Template config.json"
+  ansible.builtin.copy:
+    content: "{{ watchtower_config_json_as_yaml | to_nice_json }}"
+    dest: "{{ watchtower_install_dir }}/config.json"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0644"
 
 - name: "Run watchtower container"
   community.general.docker_container:
@@ -26,4 +41,5 @@
       - "{{ watchtower_http_port }}:3080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
+      - "{{ watchtower_install_dir }}/config.json:/config.json"
     restart_policy: "unless-stopped"

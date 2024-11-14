@@ -1,5 +1,15 @@
 ---
 watchtower_version: "latest"
+watchtower_install_dir: "/opt/docker/watchtower"
+
 # https://containrrr.dev/watchtower/arguments/
 watchtover_env: {}
+
 watchtower_docker_settings: {}
+
+# contents of config.json (see https://containrrr.dev/watchtower/private-registries/#create_the_configuration_file_manually),
+# in yaml format
+# example:
+# watchtower_config_json_as_yaml:
+#   auths: { ghcr.io: auth: "base64" }
+watchtower_config_json_as_yaml: {}
