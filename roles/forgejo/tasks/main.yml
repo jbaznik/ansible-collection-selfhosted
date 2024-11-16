@@ -1,0 +1,55 @@
+---
+- name: "Prepare task variables"
+  ansible.builtin.set_fact:
+    forgejo_service_id: "forgejo"
+    forgejo_env: "{{ forgejo_env_default | combine(forgejo_env) }}"
+    forgejo_db_env: "{{ forgejo_db_env_default | combine(forgejo_db_env) }}"
+    forgejo_docker_settings: "{{ forgejo_docker_settings_default | combine(forgejo_docker_settings) }}"
+
+- name: "Make sure {{ forgejo_docker_settings.network }} docker network exists"
+  when: forgejo_docker_settings.network != "host"
+  community.general.docker_network:
+    name: "{{ forgejo_docker_settings.network }}"
+    state: "present"
+
+- name: "Make sure config directories exist"
+  ansible.builtin.file:
+    path: "{{ item }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    state: "directory"
+    mode: "0774"
+  loop:
+    - "{{ forgejo_repositories_dir }}/data"
+    - "{{ forgejo_install_dir }}/conf"
+    - "{{ forgejo_install_dir }}/mysql"
+
+- name: "Run forgejo container"
+  community.general.docker_container:
+    name: "{{ forgejo_service_id }}"
+    image: "codeberg.org/forgejo/forgejo:{{ forgejo_version }}"
+    networks:
+      - name: "{{ forgejo_docker_settings.network }}"
+    state: "started"
+    env: "{{ forgejo_env }}"
+    ports:
+      - "{{ forgejo_webui_port }}:3000"
+      - "{{ forgejo_ssh_port }}:2222"
+    volumes:
+      - "{{ forgejo_repositories_dir }}:/var/lib/gitea"
+      - "{{ forgejo_install_dir }}/conf:/etc/gitea"
+      - "{{ forgejo_timezone_file }}:/etc/timezone:ro"
+      - "{{ forgejo_localtime_bin }}:/etc/localtime:ro"
+    restart_policy: "always"
+
+- name: "Run db container"
+  community.general.docker_container:
+    name: "{{ forgejo_service_id }}-db"
+    image: "mysql:{{ forgejo_db_mysql_version }}"
+    networks:
+      - name: "{{ forgejo_docker_settings.network }}"
+    state: "started"
+    env: "{{ forgejo_db_env }}"
+    volumes:
+      - "{{ forgejo_install_dir }}/mysql:/var/lib/mysql"
+    restart_policy: "always"

@@ -1,0 +1,26 @@
+---
+forgejo_docker_settings_default:
+  network: "host"
+  puid: "1000"
+  pgid: "1000"
+  tz: "Etc/UTC"
+
+forgejo_env_default:
+  TZ: "{{ forgejo_docker_settings.tz }}"
+  PUID: "{{ forgejo_docker_settings.puid }}"
+  PGID: "{{ forgejo_docker_settings.pgid }}"
+  FORGEJO__database__DB_TYPE: "mysql"
+  FORGEJO__database__HOST: "forgejo-db"
+  FORGEJO__database__NAME: "forgejo"
+  FORGEJO__database__USER: "forgejo"
+  FORGEJO__database__PASSWD: "forgejo"
+  FORGEJO__cron.update_checker__ENABLED: "false"
+
+forgejo_db_env_default:
+  TZ: "{{ forgejo_docker_settings.tz }}"
+  PUID: "{{ forgejo_docker_settings.puid }}"
+  PGID: "{{ forgejo_docker_settings.pgid }}"
+  MYSQL_ROOT_PASSWORD: "forgejo"
+  MYSQL_USER: "forgejo"
+  MYSQL_PASSWORD: "forgejo"
+  MYSQL_DATABASE: "forgejo"

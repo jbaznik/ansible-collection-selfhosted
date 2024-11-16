@@ -1,17 +1,18 @@
 ---
 action_groups:
   selfhosted:
-  - authelia
-  - docker
-  - changedetection
-  - adguardhome
-  - glances
-  - homarr
-  - homebox
-  - miniflux
-  - nginx
-  - filebrowser
-  - vaultwarden
-  - watchtower
-  - wgeasy
-  - wallos
+    - authelia
+    - docker
+    - changedetection
+    - adguardhome
+    - forgejo
+    - glances
+    - homarr
+    - homebox
+    - miniflux
+    - nginx
+    - filebrowser
+    - vaultwarden
+    - watchtower
+    - wgeasy
+    - wallos
