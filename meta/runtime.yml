@@ -11,6 +11,8 @@ action_groups:
     - homebox
     - miniflux
     - nginx
+    - paperlessngx
+    - paperless_ai
     - filebrowser
     - vaultwarden
     - watchtower

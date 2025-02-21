@@ -1,0 +1,20 @@
+paperlessngx_docker_settings_default:
+  network: "host"
+  puid: "1000"
+  pgid: "1000"
+  tz: "Etc/UTC"
+
+paperlessngx_env_default:
+  TZ: "{{ authelia_docker_settings.tz }}"
+  PUID: "{{ authelia_docker_settings.puid }}"
+  PGID: "{{ authelia_docker_settings.pgid }}"
+
+  USERMAP_UID: "{{ paperlessngx_docker_settings.puid }}"
+  USERMAP_GID: "{{ paperlessngx_docker_settings.pgid }}"
+  PAPERLESS_REDIS: "redis://{{ paperlessngx_service_id }}-redis:6379"
+  PAPERLESS_TIME_ZONE: "{{ paperlessngx_docker_settings.tz }}"
+  PAPERLESS_OCR_LANGUAGE: "eng"
+  # https://github.com/paperless-ngx/paperless-ngx/discussions/4047#discussioncomment-7019544
+  PAPERLESS_OCR_USER_ARGS: '{"invalidate_digital_signatures": true}'
+  # https://docs.paperless-ngx.com/configuration/#PAPERLESS_CONSUMER_RECURSIVE
+  PAPERLESS_CONSUMER_RECURSIVE: "true"
