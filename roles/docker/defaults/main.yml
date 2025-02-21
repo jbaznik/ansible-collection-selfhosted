@@ -1,9 +1,6 @@
 ---
 docker_dir: "/opt/docker"
 
-docker_daemon_options:
-  mtu: 1420
-
 docker_autobackup_enabled: false
 docker_autobackup_dest_dir: "{{ docker_dir }}/.backups"
 docker_autobackup_containers: []

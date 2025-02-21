@@ -6,6 +6,6 @@ nginx_port_https: 443
 nginx_port_admin: 81
 nginx_install_dir: "/opt/docker/nginx"
 
-# https://nginxproxymanager.com/advanced-config
+# https://nginxproxymanager.com/advanced-config/#advanced-configuration
 nginx_env: {}
 nginx_docker_settings: {}

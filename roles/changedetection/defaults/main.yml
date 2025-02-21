@@ -1,5 +1,5 @@
 ---
-# https://github.com/hay-kot/changedetection/pkgs/container/changedetection
+# https://hub.docker.com/r/dgtlmoon/changedetection.io/tags
 changedetection_version: "latest"
 changedetection_install_dir: "/opt/docker/changedetection"
 changedetection_webui_port: 5000

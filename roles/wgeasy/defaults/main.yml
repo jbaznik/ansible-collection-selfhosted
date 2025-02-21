@@ -1,4 +1,5 @@
 ---
+# https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy
 wgeasy_version: "latest"
 wgeasy_install_dir: "/opt/docker/wg-easy"
 

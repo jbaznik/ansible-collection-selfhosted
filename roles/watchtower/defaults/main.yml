@@ -1,4 +1,5 @@
 ---
+# https://hub.docker.com/r/containrrr/watchtower/tags
 watchtower_version: "latest"
 watchtower_install_dir: "/opt/docker/watchtower"
 
