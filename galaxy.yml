@@ -1,33 +1,48 @@
-namespace: "artyorsh"
+---
+namespace: artyorsh
 
-name: "selfhosted"
+name: selfhosted
 
 version: 1.0.0
 
-readme: "README.md"
+readme: README.md
 
 authors:
-- "Artur Yersh <mail@artyorsh.me>"
+  - artyorsh
 
-description: "Collection of selfhosted apps with Ansible"
+description: An opinionated collection of selfhosted apps, managed with Ansible.
 
 license:
-- "MIT"
+  - MIT
 
-# A list of tags you want to associate with the collection for indexing/searching. A tag name has the same character
-# requirements as 'namespace' and 'name'
 tags:
-  - "selfhosted"
-  - "linuxserver"
+  - selfhosted
+  - docker
+  - adguardhome
+  - authelia
+  - changedetection
+  - cloudflare
+  - duplicati
+  - filebrowser
+  - forgejo
+  - glances
+  - homebox
+  - nginx
+  - olivetin
+  - paperless_ai
+  - paperlessngx
+  - rss
+  - vaultwarden
+  - wallos
+  - watchtower
+  - wgeasy
 
-dependencies: {}
+dependencies:
+  "community.docker": ">=3.0.0"
 
-repository: "https://github.com/artyorsh/ansible-collection-selfhosted"
-
-documentation: "https://github.com/artyorsh/ansible-collection-selfhosted"
-
-homepage:  "https://github.com/artyorsh/ansible-collection-selfhosted"
-
-issues: "https://github.com/artyorsh/ansible-collection-selfhosted/issues"
+repository: https://github.com/artyorsh/ansible-collection-selfhosted
+documentation: https://github.com/artyorsh/ansible-collection-selfhosted
+homepage: https://artyorsh.me
+issues: https://github.com/artyorsh/ansible-collection-selfhosted/issues
 
 build_ignore: []
