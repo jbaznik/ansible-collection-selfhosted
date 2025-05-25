@@ -24,18 +24,18 @@ jobs:
     strategy:
       matrix:
         role:
-          - { name: "authelia", tags: "docker,authelia" }
-          - { name: "duplicati", tags: "docker,duplicati" }
-          - { name: "glances", tags: "docker,glances" }
-          - { name: "forgejo", tags: "docker,forgejo" }
-          - { name: "homebox", tags: "docker,homebox" }
-          - { name: "miniflux", tags: "docker,miniflux" }
-          - { name: "nginx", tags: "docker,nginx" }
-          - { name: "paperlessngx", tags: "docker,paperlessngx" }
-          # - { name: "rssbridge", tags: "docker,rssbridge" }
-          # - { name: "vaultwarden", tags: "docker,vaultwarden" }
-          # - { name: "wallos", tags: "docker,wallos" }
-          # - { name: "wgeasy", tags: "docker,wgeasy" }
+          - { container_name: "authelia", tags: "docker,authelia" }
+          - { container_name: "duplicati", tags: "docker,duplicati" }
+          - { container_name: "glances", tags: "docker,glances" }
+          - { container_name: "forgejo", tags: "docker,forgejo" }
+          - { container_name: "homebox", tags: "docker,homebox" }
+          - { container_name: "miniflux", tags: "docker,miniflux" }
+          - { container_name: "nginx-proxy-manager", tags: "docker,nginx" }
+          - { container_name: "paperlessngx", tags: "docker,paperlessngx" }
+          # - { container_name: "rssbridge", tags: "docker,rssbridge" }
+          # - { container_name: "vaultwarden", tags: "docker,vaultwarden" }
+          # - { container_name: "wallos", tags: "docker,wallos" }
+          # - { container_name: "wgeasy", tags: "docker,wgeasy" }
 
     steps:
       - uses: "actions/checkout@v4"
@@ -62,4 +62,4 @@ jobs:
       - name: "Print docker logs"
         run: |
           docker ps -a
-          docker logs ${{ matrix.role.name }}
+          docker logs ${{ matrix.role.container_name }}
