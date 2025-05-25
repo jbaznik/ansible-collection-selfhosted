@@ -9,10 +9,6 @@
       puid: "{{ puid }}"
       pgid: "{{ pgid }}"
 
-    rss_docker_settings:
-      # FIXME: miniflux can't resolve database with 'miniflux-db', so we need to put both containers in the same network.
-      network: "rss"
-
     wgeasy_docker_settings:
       # TODO: wg-easy requires net.ipv4.conf.all.src_valid_mark=1 sysctl which is not allowed on host network.
       network: "wgeasy"
