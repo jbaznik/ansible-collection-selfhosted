@@ -7,7 +7,7 @@
     - { role: "artyorsh.selfhosted.authelia", tags: "authelia" }
     - { role: "artyorsh.selfhosted.duplicati", tags: "duplicati" }
     - { role: "artyorsh.selfhosted.glances", tags: "glances" }
-    - { role: "artyorsh.selfhosted.forjego", tags: "forjego" }
+    - { role: "artyorsh.selfhosted.forgejo", tags: "forgejo" }
     - { role: "artyorsh.selfhosted.homebox", tags: "homebox" }
     - { role: "artyorsh.selfhosted.miniflux", tags: "miniflux" }
     - { role: "artyorsh.selfhosted.nginx-proxy-manager", tags: "nginx-proxy-manager" }
