@@ -24,19 +24,18 @@ jobs:
     strategy:
       matrix:
         role:
-          - { container_name: "authelia", tags: "docker,authelia" }
-          - { container_name: "duplicati", tags: "docker,duplicati" }
-          - { container_name: "glances", tags: "docker,glances" }
-          - { container_name: "forgejo", tags: "docker,forgejo" }
-          - { container_name: "homebox", tags: "docker,homebox" }
-          - { container_name: "miniflux", tags: "docker,rss" }
-          - { container_name: "rssbridge", tags: "docker,rss" }
-          - { container_name: "nginx-proxy-manager", tags: "docker,nginx" }
-          - { container_name: "paperlessngx", tags: "docker,paperlessngx" }
-          # - { container_name: "rssbridge", tags: "docker,rssbridge" }
-          # - { container_name: "vaultwarden", tags: "docker,vaultwarden" }
-          # - { container_name: "wallos", tags: "docker,wallos" }
-          # - { container_name: "wgeasy", tags: "docker,wgeasy" }
+          - { container_name: "authelia", tags: "authelia" }
+          - { container_name: "duplicati", tags: "duplicati" }
+          - { container_name: "glances", tags: "glances" }
+          - { container_name: "forgejo", tags: "forgejo" }
+          - { container_name: "homebox", tags: "homebox" }
+          - { container_name: "miniflux", tags: "rss" }
+          - { container_name: "rssbridge", tags: "rss" }
+          - { container_name: "nginx-proxy-manager", tags: "nginx" }
+          - { container_name: "paperlessngx", tags: "paperlessngx" }
+          # - { container_name: "vaultwarden", tags: "vaultwarden" }
+          # - { container_name: "wallos", tags: "wallos" }
+          # - { container_name: "wgeasy", tags: "wgeasy" }
 
     steps:
       - uses: "actions/checkout@v4"

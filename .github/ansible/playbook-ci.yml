@@ -4,6 +4,10 @@
   become: true
 
   vars:
+    duplicati_docker_settings:
+      duplicati_env:
+        SETTINGS_ENCRYPTION_KEY: "supersecret"
+
     forgejo_docker_settings:
       # FIXME: this is needed to fix '/var/lib/gitea/git': Permission denied errors.
       puid: "{{ puid }}"
@@ -13,8 +17,11 @@
       # FIXME: miniflux can't resolve database with 'miniflux-db', so we need to put both containers in the same network.
       network: "rss"
 
+  pre_tasks:
+    - include_role:
+        name: "artyorsh.selfhosted.docker"
+
   roles:
-    - { role: "artyorsh.selfhosted.docker", tags: "docker" }
     - { role: "artyorsh.selfhosted.authelia", tags: "authelia" }
     - { role: "artyorsh.selfhosted.duplicati", tags: "duplicati" }
     - { role: "artyorsh.selfhosted.glances", tags: "glances" }
