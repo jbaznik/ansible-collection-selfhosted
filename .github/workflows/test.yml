@@ -24,6 +24,7 @@ jobs:
     strategy:
       matrix:
         role:
+          - { container_name: "adguardhome", tags: "adguardhome" }
           - { container_name: "authelia", tags: "authelia" }
           - { container_name: "changedetection", tags: "changedetection" }
           - { container_name: "duplicati", tags: "duplicati" }

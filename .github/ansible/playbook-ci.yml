@@ -22,6 +22,7 @@
         name: "artyorsh.selfhosted.docker"
 
   roles:
+    - { role: "artyorsh.selfhosted.adguardhome", tags: "adguardhome" }
     - { role: "artyorsh.selfhosted.authelia", tags: "authelia" }
     - { role: "artyorsh.selfhosted.changedetection", tags: "changedetection" }
     - { role: "artyorsh.selfhosted.duplicati", tags: "duplicati" }
