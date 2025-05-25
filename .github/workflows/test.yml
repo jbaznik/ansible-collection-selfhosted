@@ -35,7 +35,7 @@ jobs:
           - { container_name: "paperlessngx", tags: "paperlessngx" }
           - { container_name: "vaultwarden", tags: "vaultwarden" }
           - { container_name: "wallos", tags: "wallos" }
-          - { container_name: "wgeasy", tags: "wgeasy" }
+          - { container_name: "wg-easy", tags: "wgeasy" }
 
     steps:
       - uses: "actions/checkout@v4"
