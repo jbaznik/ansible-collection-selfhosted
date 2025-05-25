@@ -24,18 +24,18 @@ jobs:
     strategy:
       matrix:
         role:
-          # - { role: "authelia", tags: "docker,authelia" }
-          - { role: "duplicati", tags: "docker,duplicati" }
-          # - { role: "glances", tags: "docker,glances" }
-          # - { role: "forjego", tags: "docker,forjego" }
-          # - { role: "homebox", tags: "docker,homebox" }
-          # - { role: "miniflux", tags: "docker,miniflux" }
-          # - { role: "nginx", tags: "docker,nginx" }
-          # - { role: "paperlessngx", tags: "docker,paperlessngx" }
-          # - { role: "rssbridge", tags: "docker,rssbridge" }
-          # - { role: "vaultwarden", tags: "docker,vaultwarden" }
-          # - { role: "wallos", tags: "docker,wallos" }
-          # - { role: "wgeasy", tags: "docker,wgeasy" }
+          # - { name: "authelia", tags: "docker,authelia" }
+          - { name: "duplicati", tags: "docker,duplicati" }
+          # - { name: "glances", tags: "docker,glances" }
+          # - { name: "forjego", tags: "docker,forjego" }
+          # - { name: "homebox", tags: "docker,homebox" }
+          # - { name: "miniflux", tags: "docker,miniflux" }
+          # - { name: "nginx", tags: "docker,nginx" }
+          # - { name: "paperlessngx", tags: "docker,paperlessngx" }
+          # - { name: "rssbridge", tags: "docker,rssbridge" }
+          # - { name: "vaultwarden", tags: "docker,vaultwarden" }
+          # - { name: "wallos", tags: "docker,wallos" }
+          # - { name: "wgeasy", tags: "docker,wgeasy" }
 
     steps:
       - uses: "actions/checkout@v4"
