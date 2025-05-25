@@ -9,6 +9,10 @@
       puid: "{{ puid }}"
       pgid: "{{ pgid }}"
 
+    postiz_docker_settings:
+      # TODO: Make sure the database is accessible at `postiz-db:5432`
+      network: "postiz"
+
     wgeasy_docker_settings:
       # TODO: wg-easy requires net.ipv4.conf.all.src_valid_mark=1 sysctl which is not allowed on host network.
       network: "wgeasy"
