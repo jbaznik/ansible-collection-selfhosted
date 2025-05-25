@@ -28,10 +28,10 @@ jobs:
           - { name: "duplicati", tags: "docker,duplicati" }
           - { name: "glances", tags: "docker,glances" }
           - { name: "forgejo", tags: "docker,forgejo" }
-          # - { name: "homebox", tags: "docker,homebox" }
-          # - { name: "miniflux", tags: "docker,miniflux" }
-          # - { name: "nginx", tags: "docker,nginx" }
-          # - { name: "paperlessngx", tags: "docker,paperlessngx" }
+          - { name: "homebox", tags: "docker,homebox" }
+          - { name: "miniflux", tags: "docker,miniflux" }
+          - { name: "nginx", tags: "docker,nginx" }
+          - { name: "paperlessngx", tags: "docker,paperlessngx" }
           # - { name: "rssbridge", tags: "docker,rssbridge" }
           # - { name: "vaultwarden", tags: "docker,vaultwarden" }
           # - { name: "wallos", tags: "docker,wallos" }
