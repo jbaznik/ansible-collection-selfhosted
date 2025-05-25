@@ -4,10 +4,6 @@
   become: true
 
   vars:
-    duplicati_docker_settings:
-      duplicati_env:
-        SETTINGS_ENCRYPTION_KEY: "supersecret"
-
     forgejo_docker_settings:
       # FIXME: this is needed to fix '/var/lib/gitea/git': Permission denied errors.
       puid: "{{ puid }}"
