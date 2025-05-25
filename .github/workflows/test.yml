@@ -1,0 +1,70 @@
+---
+name: "Test (Ubuntu 22.04)"
+
+on:
+  pull_request:
+    branches:
+      - "master"
+    paths-ignore:
+      - "**.md"
+
+  push:
+    branches:
+      - "master"
+    paths-ignore:
+      - "**.md"
+
+  schedule:
+    - cron: "0 7 * * 0"
+
+jobs:
+  test:
+    runs-on: "ubuntu-22.04"
+
+    strategy:
+      matrix:
+        role:
+          # - { role: "authelia", tags: "docker,authelia" }
+          - { role: "duplicati", tags: "docker,duplicati" }
+          # - { role: "glances", tags: "docker,glances" }
+          # - { role: "forjego", tags: "docker,forjego" }
+          # - { role: "homebox", tags: "docker,homebox" }
+          # - { role: "miniflux", tags: "docker,miniflux" }
+          # - { role: "nginx-proxy-manager", tags: "docker,nginx-proxy-manager" }
+          # - { role: "paperlessngx", tags: "docker,paperlessngx" }
+          # - { role: "rssbridge", tags: "docker,rssbridge" }
+          # - { role: "vaultwarden", tags: "docker,vaultwarden" }
+          # - { role: "wallos", tags: "docker,wallos" }
+          # - { role: "wgeasy", tags: "docker,wgeasy" }
+
+    steps:
+      - uses: "actions/checkout@v4"
+
+      - name: "Print Ansible environment"
+        run: "ansible --version"
+
+      - name: "Install dependencies"
+        run: |
+          # fix ModuleNotFoundError: No module named 'requests'
+          /opt/pipx/venvs/ansible-core/bin/python -m pip install requests
+
+          ansible-galaxy install geerlingguy.docker
+          ansible-galaxy collection install community.docker
+          ansible-galaxy collection install community.general
+          ansible-galaxy collection install . -f
+
+      - name: "Deploy containers"
+        run: |
+          ansible-playbook .github/ansible/playbook-ci.yml
+          --tags "${{ matrix.role.tags }}"
+          -i localhost
+          -e "ansible_user=${USER}"
+          -v
+
+      - name: "Wait for containers to start"
+        run: "sleep 60"
+
+      - name: "Print docker logs"
+        run: |
+          docker ps -a
+          docker logs "${{ matrix.role.name }}"
