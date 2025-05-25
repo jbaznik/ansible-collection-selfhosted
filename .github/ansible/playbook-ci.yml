@@ -1,5 +1,5 @@
 ---
-- name: "Run roles"
+- name: "GitHub CI Playbook"
   hosts: "localhost"
   become: true
 
