@@ -14,6 +14,7 @@
       network: "rss"
 
     wgeasy_docker_settings:
+      # TODO: wg-easy requires net.ipv4.conf.all.src_valid_mark=1 sysctl which is not allowed on host network.
       network: "wgeasy"
 
   pre_tasks:
