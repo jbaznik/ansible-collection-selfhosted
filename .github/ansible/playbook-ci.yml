@@ -3,16 +3,16 @@
   hosts: "localhost"
   become: true
   roles:
-    - { role: "docker", tags: "docker" }
-    - { role: "authelia", tags: "authelia" }
-    - { role: "duplicati", tags: "duplicati" }
-    - { role: "glances", tags: "glances" }
-    - { role: "forjego", tags: "forjego" }
-    - { role: "homebox", tags: "homebox" }
-    - { role: "miniflux", tags: "miniflux" }
-    - { role: "nginx-proxy-manager", tags: "nginx-proxy-manager" }
-    - { role: "paperlessngx", tags: "paperlessngx" }
-    - { role: "rssbridge", tags: "rssbridge" }
-    - { role: "vaultwarden", tags: "vaultwarden" }
-    - { role: "wallos", tags: "wallos" }
-    - { role: "wgeasy", tags: "wgeasy" }
+    - { role: "artyorsh.selfhosted.docker", tags: "docker" }
+    - { role: "artyorsh.selfhosted.authelia", tags: "authelia" }
+    - { role: "artyorsh.selfhosted.duplicati", tags: "duplicati" }
+    - { role: "artyorsh.selfhosted.glances", tags: "glances" }
+    - { role: "artyorsh.selfhosted.forjego", tags: "forjego" }
+    - { role: "artyorsh.selfhosted.homebox", tags: "homebox" }
+    - { role: "artyorsh.selfhosted.miniflux", tags: "miniflux" }
+    - { role: "artyorsh.selfhosted.nginx-proxy-manager", tags: "nginx-proxy-manager" }
+    - { role: "artyorsh.selfhosted.paperlessngx", tags: "paperlessngx" }
+    - { role: "artyorsh.selfhosted.rssbridge", tags: "rssbridge" }
+    - { role: "artyorsh.selfhosted.vaultwarden", tags: "vaultwarden" }
+    - { role: "artyorsh.selfhosted.wallos", tags: "wallos" }
+    - { role: "artyorsh.selfhosted.wgeasy", tags: "wgeasy" }
