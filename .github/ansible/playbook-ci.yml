@@ -31,12 +31,12 @@
     - { role: "artyorsh.selfhosted.glances", tags: "glances" }
     - { role: "artyorsh.selfhosted.homarr", tags: "homarr" }
     - { role: "artyorsh.selfhosted.homebox", tags: "homebox" }
-    - { role: "artyorsh.selfhosted.rss", tags: "rss" }
     - { role: "artyorsh.selfhosted.nginx", tags: "nginx" }
-    - { role: "artyorsh.selfhosted.paperlessngx", tags: "paperlessngx" }
-    - { role: "artyorsh.selfhosted.paperless_ai", tags: "paperless_ai" }
-    - { role: "artyorsh.selfhosted.postiz", tags: "postiz" }
     - { role: "artyorsh.selfhosted.olivetin", tags: "olivetin" }
+    - { role: "artyorsh.selfhosted.paperless_ai", tags: "paperless_ai" }
+    - { role: "artyorsh.selfhosted.paperlessngx", tags: "paperlessngx" }
+    - { role: "artyorsh.selfhosted.postiz", tags: "postiz" }
+    - { role: "artyorsh.selfhosted.rss", tags: "rss" }
     - { role: "artyorsh.selfhosted.vaultwarden", tags: "vaultwarden" }
     - { role: "artyorsh.selfhosted.wallos", tags: "wallos" }
     - { role: "artyorsh.selfhosted.watchtower", tags: "watchtower" }
