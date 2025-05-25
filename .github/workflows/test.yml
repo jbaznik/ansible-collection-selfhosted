@@ -54,7 +54,7 @@ jobs:
           ansible-galaxy collection install . -f
 
       - name: "Deploy containers"
-        run: "ansible-playbook .github/ansible/playbook-ci.yml --tags \"${{ matrix.role.tags }}\" -i localhost -e \"ansible_user=${USER}\" -v"
+        run: 'ansible-playbook .github/ansible/playbook-ci.yml --tags "${{ matrix.role.tags }}" -i localhost -e "ansible_user=${USER}" -v'
 
       - name: "Wait for containers to start"
         run: "sleep 60"
