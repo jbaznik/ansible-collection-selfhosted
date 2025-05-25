@@ -27,7 +27,7 @@ jobs:
           - { name: "authelia", tags: "docker,authelia" }
           - { name: "duplicati", tags: "docker,duplicati" }
           - { name: "glances", tags: "docker,glances" }
-          - { name: "forjego", tags: "docker,forjego" }
+          - { name: "forgejo", tags: "docker,forgejo" }
           # - { name: "homebox", tags: "docker,homebox" }
           # - { name: "miniflux", tags: "docker,miniflux" }
           # - { name: "nginx", tags: "docker,nginx" }
