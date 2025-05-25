@@ -58,7 +58,7 @@ jobs:
           ansible-playbook .github/ansible/playbook-ci.yml
           --tags "${{ matrix.role.tags }}"
           -i localhost
-          -e "ansible_user=${USER}"
+          -e \"ansible_user=${USER}\"
           -v
 
       - name: "Wait for containers to start"
