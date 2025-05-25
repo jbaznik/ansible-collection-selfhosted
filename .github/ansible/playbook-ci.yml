@@ -30,7 +30,9 @@
     - { role: "artyorsh.selfhosted.nginx", tags: "nginx" }
     - { role: "artyorsh.selfhosted.paperlessngx", tags: "paperlessngx" }
     - { role: "artyorsh.selfhosted.paperless_ai", tags: "paperless_ai" }
+    - { role: "artyorsh.selfhosted.postiz", tags: "postiz" }
     - { role: "artyorsh.selfhosted.olivetin", tags: "olivetin" }
     - { role: "artyorsh.selfhosted.vaultwarden", tags: "vaultwarden" }
     - { role: "artyorsh.selfhosted.wallos", tags: "wallos" }
+    - { role: "artyorsh.selfhosted.watchtower", tags: "watchtower" }
     - { role: "artyorsh.selfhosted.wgeasy", tags: "wgeasy" }
