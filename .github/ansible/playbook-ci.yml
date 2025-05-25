@@ -4,6 +4,11 @@
   become: true
 
   vars:
+    forgejo_docker_settings:
+      # FIXME: this is needed to fix '/var/lib/gitea/git': Permission denied errors.
+      puid: "{{ puid }}"
+      pgid: "{{ pgid }}"
+
     rss_docker_settings:
       # FIXME: miniflux can't resolve database with 'miniflux-db', so we need to put both containers in the same network.
       network: "rss"
