@@ -62,4 +62,4 @@ jobs:
       - name: "Print docker logs"
         run: |
           docker ps -a
-          docker logs "${{ matrix.role.name }}"
+          docker logs ${{ matrix.role.name }}
