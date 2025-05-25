@@ -57,7 +57,7 @@ jobs:
         run: 'ansible-playbook .github/ansible/playbook-ci.yml --tags "${{ matrix.role.tags }}" -i localhost -e "ansible_user=${USER}" -v'
 
       - name: "Wait for containers to start"
-        run: "sleep 60"
+        run: "sleep 15"
 
       - name: "Print docker logs"
         run: |
