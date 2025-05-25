@@ -14,7 +14,7 @@
       network: "rss"
 
     wgeasy_docker_settings:
-      network: "host"
+      network: "wgeasy"
 
   pre_tasks:
     - include_role:
