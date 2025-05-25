@@ -61,7 +61,14 @@ jobs:
           ansible-galaxy collection install . -f
 
       - name: "Run a role"
-        run: 'ansible-playbook .github/ansible/playbook-ci.yml --tags "${{ matrix.role.tags }}" -i localhost -e "ansible_user=${USER}" -e "puid=$(id -u)" -e "pgid=$(id -g)" -v'
+        run: |
+          ansible-playbook .github/ansible/playbook-ci.yml \
+          --tags ${{ matrix.role.tags }} \
+          -i localhost \
+          -e "ansible_user=${USER}" \
+          -e "puid=$(id -u)" \
+          -e "pgid=$(id -g)" \
+          -v
 
       - name: "Wait for containers to start"
         run: "sleep 15"
