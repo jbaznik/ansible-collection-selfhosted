@@ -9,10 +9,10 @@
     - { role: "artyorsh.selfhosted.glances", tags: "glances" }
     - { role: "artyorsh.selfhosted.forgejo", tags: "forgejo" }
     - { role: "artyorsh.selfhosted.homebox", tags: "homebox" }
-    - { role: "artyorsh.selfhosted.miniflux", tags: "miniflux" }
+    # FIXME: miniflux is deployed together with rssbridge. Not possible to test separately, but miniflux is higher priority.
+    - { role: "artyorsh.selfhosted.rss", tags: "miniflux" }
     - { role: "artyorsh.selfhosted.nginx-proxy-manager", tags: "nginx-proxy-manager" }
     - { role: "artyorsh.selfhosted.paperlessngx", tags: "paperlessngx" }
-    - { role: "artyorsh.selfhosted.rssbridge", tags: "rssbridge" }
     - { role: "artyorsh.selfhosted.vaultwarden", tags: "vaultwarden" }
     - { role: "artyorsh.selfhosted.wallos", tags: "wallos" }
     - { role: "artyorsh.selfhosted.wgeasy", tags: "wgeasy" }
