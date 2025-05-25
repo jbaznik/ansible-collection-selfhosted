@@ -17,6 +17,9 @@
       # FIXME: miniflux can't resolve database with 'miniflux-db', so we need to put both containers in the same network.
       network: "rss"
 
+    wgeasy_docker_settings:
+      network: "host"
+
   pre_tasks:
     - include_role:
         name: "artyorsh.selfhosted.docker"
