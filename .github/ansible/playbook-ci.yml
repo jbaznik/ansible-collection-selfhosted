@@ -19,13 +19,18 @@
 
   roles:
     - { role: "artyorsh.selfhosted.authelia", tags: "authelia" }
+    - { role: "artyorsh.selfhosted.changedetection", tags: "changedetection" }
     - { role: "artyorsh.selfhosted.duplicati", tags: "duplicati" }
-    - { role: "artyorsh.selfhosted.glances", tags: "glances" }
+    - { role: "artyorsh.selfhosted.filebrowser", tags: "filebrowser" }
     - { role: "artyorsh.selfhosted.forgejo", tags: "forgejo" }
+    - { role: "artyorsh.selfhosted.glances", tags: "glances" }
+    - { role: "artyorsh.selfhosted.homarr", tags: "homarr" }
     - { role: "artyorsh.selfhosted.homebox", tags: "homebox" }
     - { role: "artyorsh.selfhosted.rss", tags: "rss" }
     - { role: "artyorsh.selfhosted.nginx", tags: "nginx" }
     - { role: "artyorsh.selfhosted.paperlessngx", tags: "paperlessngx" }
+    - { role: "artyorsh.selfhosted.paperless_ai", tags: "paperless_ai" }
+    - { role: "artyorsh.selfhosted.olivetin", tags: "olivetin" }
     - { role: "artyorsh.selfhosted.vaultwarden", tags: "vaultwarden" }
     - { role: "artyorsh.selfhosted.wallos", tags: "wallos" }
     - { role: "artyorsh.selfhosted.wgeasy", tags: "wgeasy" }

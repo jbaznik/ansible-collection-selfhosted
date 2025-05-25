@@ -25,13 +25,16 @@ jobs:
       matrix:
         role:
           - { container_name: "authelia", tags: "authelia" }
+          - { container_name: "changedetection", tags: "changedetection" }
           - { container_name: "duplicati", tags: "duplicati" }
+          - { container_name: "filebrowser", tags: "filebrowser" }
           - { container_name: "glances", tags: "glances" }
           - { container_name: "forgejo", tags: "forgejo" }
           - { container_name: "homebox", tags: "homebox" }
           - { container_name: "miniflux", tags: "rss" }
           - { container_name: "rssbridge", tags: "rss" }
           - { container_name: "nginx-proxy-manager", tags: "nginx" }
+          - { container_name: "paperless-ai", tags: "paperless_ai" }
           - { container_name: "paperlessngx", tags: "paperlessngx" }
           - { container_name: "vaultwarden", tags: "vaultwarden" }
           - { container_name: "wallos", tags: "wallos" }
