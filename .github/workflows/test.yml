@@ -30,7 +30,7 @@ jobs:
           # - { role: "forjego", tags: "docker,forjego" }
           # - { role: "homebox", tags: "docker,homebox" }
           # - { role: "miniflux", tags: "docker,miniflux" }
-          # - { role: "nginx-proxy-manager", tags: "docker,nginx-proxy-manager" }
+          # - { role: "nginx", tags: "docker,nginx" }
           # - { role: "paperlessngx", tags: "docker,paperlessngx" }
           # - { role: "rssbridge", tags: "docker,rssbridge" }
           # - { role: "vaultwarden", tags: "docker,vaultwarden" }
