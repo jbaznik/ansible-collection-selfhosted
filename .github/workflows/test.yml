@@ -33,9 +33,9 @@ jobs:
           - { container_name: "rssbridge", tags: "rss" }
           - { container_name: "nginx-proxy-manager", tags: "nginx" }
           - { container_name: "paperlessngx", tags: "paperlessngx" }
-          # - { container_name: "vaultwarden", tags: "vaultwarden" }
-          # - { container_name: "wallos", tags: "wallos" }
-          # - { container_name: "wgeasy", tags: "wgeasy" }
+          - { container_name: "vaultwarden", tags: "vaultwarden" }
+          - { container_name: "wallos", tags: "wallos" }
+          - { container_name: "wgeasy", tags: "wgeasy" }
 
     steps:
       - uses: "actions/checkout@v4"
